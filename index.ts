@@ -5,14 +5,22 @@ import './style.css';
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
-let age : number;
-age = 3;
-
 let name : string;
-name = "Joe";
+let age : number;
 
-let adult : boolean;
-adult = true;
-adult = 3;
+let person = {name: string, age : number};
+person = {name: "joe", age: 3}
+person.age = 6;
+person.name = "bob";
 
-let result : any;
+
+function createPerson(age, name){
+  return {age, name}
+}
+
+class Person{
+  age : number;
+  name : string;
+}
+let bob = new Person();
+bob = createPerson(3, "bob");
